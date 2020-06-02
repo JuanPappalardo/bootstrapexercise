@@ -42,7 +42,7 @@
             <img src="img/logo.png" class="img-fluid" />
           </div>
           <div class="col-12 col-sm-3 align-self-center">
-            <a type="button"class="btn btn-warning btn-sm btn-block font-weight-bold pt-3 pb-3" role="button" data-toggle="modal" data-target="#ReserveModal">Reserve Table</a>
+            <a id="reserveButton"type="button"class="btn btn-warning btn-sm btn-block font-weight-bold pt-3 pb-3" role="button">Reserve Table</a>
 
           </div>
         </div>
@@ -85,7 +85,7 @@
             </li>
           </ul>
                           <span class="navbar-text">
-                            <a data-toggle="modal" data-target="#loginModal">
+                            <a id="loginButton" type="button" role="button">
                               <span class="fa fa-sign-in"></span> Login</a>
                           </span>
         </div>
@@ -405,6 +405,13 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
       $(document).ready(function(){
+        $("#reserveButton").click(function(){
+          $("#ReserveModal").modal('show');
+        });
+         $("#loginButton").click(function () {
+          $("#loginModal").modal('show');
+        });
+
         $("#mycarousel").carousel({
           interval:2000
         });
